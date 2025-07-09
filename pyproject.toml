@@ -1,0 +1,49 @@
+[project]
+name = "vision-compgen"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "diffusers>=0.33.1",
+    "llm>=0.25",
+    "numpy>=2.2.6",
+    "pandas>=2.2.3",
+    "pillow>=11.2.1",
+    "pydantic>=2.11.4",
+    "python-dotenv>=1.1.0",
+    "scikit-learn>=1.6.1",
+    "torch>=2.7.0",
+    "tqdm>=4.67.1",
+    "transformers>=4.52.3",
+    "wandb>=0.19.11",
+]
+
+[tool.ruff]
+line-length = 90
+indent-width = 2
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint]
+select = [
+    "B",   # flake8-bugbear
+    "F",   # pyflakes
+    "E",   # pycodestyle
+    "I",   # isort
+    #"ANN", # flake8 type annotations
+    "RUF", # ruff-specific rules
+]
+fixable = ["ALL"]
+# Add the `line-too-long` rule to the enforced rule set.
+extend-select = ["E501"]
+ignore = ["F722"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.isort]
+force-single-line = true
